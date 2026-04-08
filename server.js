@@ -1,12 +1,3 @@
-const BASE_URL = "https://mentorai-backend-production.up.railway.app";
-
-fetch(`${BASE_URL}/api/health`)
-  .then(res => res.json())
-  .then(data => {
-    console.log("Backend connected:", data);
-  })
-  .catch(err => console.error("Error:", err));
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
