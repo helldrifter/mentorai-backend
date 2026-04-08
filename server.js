@@ -1,3 +1,12 @@
+const BASE_URL = "https://mentorai-backend-production.up.railway.app";
+
+fetch(`${BASE_URL}/api/health`)
+  .then(res => res.json())
+  .then(data => {
+    console.log("Backend connected:", data);
+  })
+  .catch(err => console.error("Error:", err));
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -44,7 +53,7 @@ app.use((err, req, res, next) => {
 
 // ── Connect DB & start server ────────────
 // ── Start server ────────────
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
